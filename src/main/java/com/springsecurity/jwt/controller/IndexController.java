@@ -4,6 +4,8 @@ import com.springsecurity.jwt.model.Users;
 import com.springsecurity.jwt.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -60,5 +62,17 @@ public class IndexController {
         users.setPassword(encPassword);
         userRepository.save(users);
         return "redirect:/loginForm";
+    }
+
+    @Secured("ROLE_ADMIN") //권한이 맞아야 접근가능
+    @GetMapping("/info")
+    public @ResponseBody String info() {
+        return "개인정보";
+    }
+
+    @PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')") //권한이 맞아야 접근가능
+    @GetMapping("/data")
+    public @ResponseBody String data() {
+        return "데이터정보";
     }
 }

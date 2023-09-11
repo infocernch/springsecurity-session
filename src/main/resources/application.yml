@@ -24,6 +24,8 @@ spring:
     defer-datasource-initialization: true
     database: oracle
     database-platform: org.hibernate.dialect.Oracle10gDialect
+
+
 logging:
   level:
     org:
