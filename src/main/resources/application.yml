@@ -11,9 +11,8 @@ spring:
   datasource:
     url: jdbc:oracle:thin:@localhost:1521:xe
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    username: spring
-    password: 1234
-
+    username: java
+    password: java1234
 
 
   jpa:
@@ -22,3 +21,11 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+    defer-datasource-initialization: true
+    database: oracle
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
