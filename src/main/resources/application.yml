@@ -13,7 +13,17 @@ spring:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     username: java
     password: java1234
-
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 478099371394-9pvj09856ubmqh937ak3oqagi09n08pn.apps.googleusercontent.com
+            client-secret: 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
+            redirect-uri: http://localhost:9090/oauth2/code/google
+            scope:
+              - email
+              - profile
 
   jpa:
     hibernate:
@@ -24,6 +34,10 @@ spring:
     defer-datasource-initialization: true
     database: oracle
     database-platform: org.hibernate.dialect.Oracle10gDialect
+
+
+
+
 
 
 logging:
