@@ -10,8 +10,11 @@ import org.springframework.stereotype.Service;
 public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        System.out.println("userRequest = " + userRequest.getClientRegistration());
+        System.out.println("userRequest = " + userRequest.getClientRegistration());//registrationId로 어떤 Oauth로 로그인 했는지 확인 가능
         System.out.println("userRequest.get = " + userRequest.getAccessToken().getTokenValue());
+        // 구글로그인 버튼 클릭 -> 구글로그인창 -> 로그인완료 -> code리턴받음(oauth-client라이브러리가 받아줌)->
+        //AccessToken요청 .. 여기까지가 userRequest정보임. -> loadUser함수 호출 --> 회원프로필 정보를 받아옴. (구글로부터)
+
         System.out.println("super.loadUser(userRequest).getAttributes() = " + super.loadUser(userRequest).getAttributes());
         /*
         * super.loadUser(userRequest).getAttributes() =
@@ -34,7 +37,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         * super.loadUser(userRequest); 이걸로 강제 회원가입 시킴.
         * */
 
-
+        OAuth2User oAuth2User = super.loadUser(userRequest);
 
 
         return super.loadUser(userRequest);
