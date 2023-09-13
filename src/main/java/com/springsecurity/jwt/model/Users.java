@@ -21,9 +21,11 @@ public class Users {
     private long id;
     private String email;
     private String password;
-    private String provider;
     private String role;
     private String username;
+
+    private String provider;
+    private String providerId;
     @CreationTimestamp
     private Timestamp createDate;
 }
