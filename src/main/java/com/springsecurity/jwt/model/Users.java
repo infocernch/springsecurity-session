@@ -2,6 +2,7 @@ package com.springsecurity.jwt.model;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -14,7 +15,7 @@ import java.sql.Timestamp;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Users {
     @Id//pk
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk")
@@ -28,4 +29,16 @@ public class Users {
     private String providerId;
     @CreationTimestamp
     private Timestamp createDate;
+
+    @Builder
+    public Users(long id, String email, String password, String role, String username, String provider, String providerId, Timestamp createDate) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.username = username;
+        this.provider = provider;
+        this.providerId = providerId;
+        this.createDate = createDate;
+    }
 }

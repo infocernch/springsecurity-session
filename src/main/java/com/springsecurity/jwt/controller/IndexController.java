@@ -67,8 +67,10 @@ public class IndexController {
         return "index";
     }
 
+    //일반로그인해도, 소셜로그인해도 다 가능
     @GetMapping("/user")
-    public @ResponseBody String user() {
+    public @ResponseBody String user(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+        System.out.println("principlaDetails : "+ principalDetails.getUsers());
         return "user";
     }
 

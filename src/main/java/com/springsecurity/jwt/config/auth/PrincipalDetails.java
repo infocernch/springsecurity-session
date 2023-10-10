@@ -4,8 +4,10 @@ package com.springsecurity.jwt.config.auth;
 
 import com.springsecurity.jwt.model.Users;
 import lombok.Data;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.ArrayList;
@@ -24,10 +26,19 @@ import java.util.Map;
 public class PrincipalDetails implements UserDetails, OAuth2User {
 
     private Users users;// 콤포지션
+    private Map<String, Object> attributes;
 
+    //일반로그인
     public PrincipalDetails(Users users) {
         this.users = users;
     }
+    //Oauth로그인
+    public PrincipalDetails(Users users,Map<String,Object> attributes) {
+        this.users = users;
+        this.attributes = attributes;
+    }
+
+
 
     @Override//해당 유저의 권한을 리턴
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -51,26 +62,30 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
         return users.getUsername();
     }
 
+    //계정 만료됐나?
     @Override
     public boolean isAccountNonExpired() {
         return true;
-    }
+    }//만료 안됨
 
+    //계정 잠겼나?
     @Override
     public boolean isAccountNonLocked() {
         return true;
-    }
+    }//안 잠김
 
+    //계정 비밀번호 너무 오래쓴거아님?
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
-    }
+    }//아님
 
+    //계정 활성화 되어있나?
     @Override
     public boolean isEnabled() {
         // 우리사이트에서 1년간 회원이 로그인을 안하면 휴면 계정으로 하기로 함.
         // 현재시간 - 로그인 시간 => 1년 초과하면 return false
-        return true;
+        return true;//네
     }
 
     @Override
@@ -80,6 +95,11 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Override
     public Map<String, Object> getAttributes() {
+        return null;
+    }
+
+    @Override
+    public String getName() {
         return null;
     }
 }

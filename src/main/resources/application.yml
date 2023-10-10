@@ -12,7 +12,7 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521:xe
     driver-class-name: oracle.jdbc.driver.OracleDriver
     username: java
-    password: java1234
+    password: java12345
   security:
     oauth2:
       client:
