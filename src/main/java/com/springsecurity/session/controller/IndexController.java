@@ -1,18 +1,14 @@
-package com.springsecurity.jwt.controller;
+package com.springsecurity.session.controller;
 
-import com.springsecurity.jwt.config.auth.PrincipalDetails;
-import com.springsecurity.jwt.model.Users;
-import com.springsecurity.jwt.repository.UserRepository;
+import com.springsecurity.session.config.auth.PrincipalDetails;
+import com.springsecurity.session.model.Users;
+import com.springsecurity.session.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

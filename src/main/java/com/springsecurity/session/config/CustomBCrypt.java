@@ -1,4 +1,4 @@
-package com.springsecurity.jwt.config;
+package com.springsecurity.session.config;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;

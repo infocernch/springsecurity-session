@@ -1,7 +1,6 @@
-package com.springsecurity.jwt.model;
+package com.springsecurity.session.model;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;

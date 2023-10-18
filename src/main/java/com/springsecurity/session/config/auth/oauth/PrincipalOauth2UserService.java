@@ -1,9 +1,9 @@
-package com.springsecurity.jwt.config.auth.oauth;
+package com.springsecurity.session.config.auth.oauth;
 
-import com.springsecurity.jwt.config.CustomBCrypt;
-import com.springsecurity.jwt.config.auth.PrincipalDetails;
-import com.springsecurity.jwt.model.Users;
-import com.springsecurity.jwt.repository.UserRepository;
+import com.springsecurity.session.config.CustomBCrypt;
+import com.springsecurity.session.config.auth.PrincipalDetails;
+import com.springsecurity.session.model.Users;
+import com.springsecurity.session.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;

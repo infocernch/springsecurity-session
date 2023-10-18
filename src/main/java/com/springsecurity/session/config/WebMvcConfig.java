@@ -1,4 +1,4 @@
-package com.springsecurity.jwt.config;
+package com.springsecurity.session.config;
 
 import org.springframework.boot.web.servlet.view.MustacheViewResolver;
 import org.springframework.context.annotation.Configuration;

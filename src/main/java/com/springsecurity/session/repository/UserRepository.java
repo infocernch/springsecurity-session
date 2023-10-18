@@ -1,6 +1,6 @@
-package com.springsecurity.jwt.repository;
+package com.springsecurity.session.repository;
 
-import com.springsecurity.jwt.model.Users;
+import com.springsecurity.session.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 //CRUD함수를 JpaRepository 가 들고있음

@@ -1,15 +1,12 @@
-package com.springsecurity.jwt.config;
+package com.springsecurity.session.config;
 
-import com.springsecurity.jwt.config.auth.oauth.PrincipalOauth2UserService;
+import com.springsecurity.session.config.auth.oauth.PrincipalOauth2UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 //1.코드받기(인증) 2.액세스토큰(권한) 3.사용자프로필 정보를 가져와서 4.그 정보를 토대로 회원가입을 자동으로 진행시키기도 함

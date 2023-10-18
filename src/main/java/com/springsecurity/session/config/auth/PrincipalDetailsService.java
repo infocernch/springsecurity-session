@@ -1,7 +1,7 @@
-package com.springsecurity.jwt.config.auth;
+package com.springsecurity.session.config.auth;
 
-import com.springsecurity.jwt.model.Users;
-import com.springsecurity.jwt.repository.UserRepository;
+import com.springsecurity.session.model.Users;
+import com.springsecurity.session.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

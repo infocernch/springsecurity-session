@@ -1,13 +1,11 @@
-package com.springsecurity.jwt.config.auth;
+package com.springsecurity.session.config.auth;
 
 
 
-import com.springsecurity.jwt.model.Users;
+import com.springsecurity.session.model.Users;
 import lombok.Data;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.ArrayList;
